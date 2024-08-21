@@ -5,12 +5,43 @@
 package Controlador;
 
 import Modelo.BaseDeDatos;
-import Controlador.*;
+import Vista.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.ComboBoxModel;
+import javax.swing.DefaultComboBoxModel;
+
 /**
  *
  * @author Lenovo
  */
-public class Gestion {
+public class Gestion implements ActionListener{
+
+    private final Menu menu;
+
+    public Gestion(Menu menu) {
+   
+        this.menu = menu;
+        this.menu.generarOrdenButton.addActionListener(this);
+        
+        ComboBoxModel cbm = new DefaultComboBoxModel(BaseDeDatos.getNameFrutas("frutas"));
+        this.menu.frutasComboBox.setModel(cbm);
+    }
+       
+    public void iniciar(){
+        menu.setTitle("Menu Selección de Frutas");
+        menu.setLocationRelativeTo(null);
+        
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        
+        if (e.getSource() == menu.generarOrdenButton){
+            
+        }
     
+    
+    }    
             
 }

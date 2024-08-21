@@ -31,66 +31,80 @@ public class Menu extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        frutasBoton = new javax.swing.JButton();
-        verdurasBoton = new javax.swing.JButton();
+        frutasComboBox = new javax.swing.JComboBox<>();
+        verdurasComboBox = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        generarOrdenButton = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Bienvenido al Menu");
+        jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(140, 140, 140))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel1)
-                .addContainerGap(44, Short.MAX_VALUE))
-        );
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setText("Bienvenidos al Menú");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 30, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 390, 90));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 90));
 
+        jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setText("Seleccione que desea agregar a su orden:");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 18, -1, -1));
 
-        frutasBoton.setText("Frutas");
-        frutasBoton.addActionListener(new java.awt.event.ActionListener() {
+        frutasComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        frutasComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                frutasBotonActionPerformed(evt);
+                frutasComboBoxActionPerformed(evt);
             }
         });
-        jPanel2.add(frutasBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
+        jPanel2.add(frutasComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
 
-        verdurasBoton.setText("Verduras");
-        verdurasBoton.addActionListener(new java.awt.event.ActionListener() {
+        verdurasComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel2.add(verdurasComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, -1, -1));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 350, 160));
+
+        generarOrdenButton.setText("Generar Orden");
+        generarOrdenButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                verdurasBotonActionPerformed(evt);
+                generarOrdenButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(verdurasBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, -1, -1));
+        jPanel2.add(generarOrdenButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 350, -1, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 380, 190));
+        jButton1.setText("Añadir Pedido");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, -1, -1));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 380, 390));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void frutasBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frutasBotonActionPerformed
-        
-    }//GEN-LAST:event_frutasBotonActionPerformed
+    private void generarOrdenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generarOrdenButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_generarOrdenButtonActionPerformed
 
-    private void verdurasBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verdurasBotonActionPerformed
-        
-    }//GEN-LAST:event_verdurasBotonActionPerformed
+    private void frutasComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frutasComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_frutasComboBoxActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -128,11 +142,15 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton frutasBoton;
+    public javax.swing.JComboBox<String> frutasComboBox;
+    public javax.swing.JButton generarOrdenButton;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JButton verdurasBoton;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
+    public javax.swing.JComboBox<String> verdurasComboBox;
     // End of variables declaration//GEN-END:variables
 }

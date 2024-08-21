@@ -4,9 +4,9 @@
  */
 package parcial_gestion_de_comida;
 
+import Controlador.Gestion;
 import Modelo.BaseDeDatos;
-import org.json.JSONArray;
-import supabase.Supabase;
+import Vista.Menu;
 
 /**
  *
@@ -18,7 +18,17 @@ public class Parcial_Gestion_de_Comida {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        BaseDeDatos.setFrutas(12, "Fresa");
+        BaseDeDatos.login();
+        Menu nm = new Menu();
+        
+        Gestion g = new Gestion( nm);
+        g.iniciar();
+        nm.setVisible(true);
+        
+        
+       
+        
+        
     }
     
 }
